@@ -1,0 +1,15 @@
+<div class="card bg-dark fs-6 {{ wrapperStyle }}">
+	<div class="card-header fajb {{ headerStyle }}">
+		<div class="title {{ titleStyle }}">{{ cardTitle }}</div>
+		<div class="card-toolbar {{ toolbarStyle }}">
+			<ng-container *ngIf="type === 'collapse'">
+				<i
+					(click)="isCollapsed = !isCollapsed"
+					class="fa-solid fa-chevron-up chevron pointer {{ isCollapsed ? 'active' : '' }}"></i>
+			</ng-container>
+		</div>
+	</div>
+	<div class="card-body {{ bodyStyle }} {{ isCollapsed ? 'collapsed' : '' }}">
+		<ng-content select="[body]"></ng-content>
+	</div>
+</div>

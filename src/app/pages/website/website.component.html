@@ -1,0 +1,19 @@
+<header class="py-3 px-5 fs-6 fajb">
+	<div class="left-part facjs">
+		<i class="fa-solid fa-house pointer"></i>
+		<div class="mx-3">
+			<nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+				<input type="text" nz-input placeholder="目前沒功能..." />
+			</nz-input-group>
+			<ng-template #suffixIconButton>
+				<button nz-button nzType="default">Go</button>
+			</ng-template>
+		</div>
+	</div>
+	<div class="right-part">
+		<div class="facjs gap-1 pointer">
+			<i class="fa-solid fa-window-restore"></i>
+		</div>
+	</div>
+</header>
+<router-outlet></router-outlet>

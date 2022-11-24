@@ -1,0 +1,16 @@
+@import "/src/assets/scss/rwd";
+.panel {
+	display: grid;
+	grid-template-columns: 40% 60%;
+	@include xl {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	min-height: 60vh;
+	.left {
+		max-height: 90vh;
+		.dragItem {
+			cursor: pointer;
+		}
+	}
+}

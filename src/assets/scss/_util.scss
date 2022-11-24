@@ -1,0 +1,30 @@
+@import "var";
+html body {
+	height: auto !important;
+	.fajc {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.fajb {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.facjs {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+	}
+
+	.pointer {
+		cursor: pointer;
+	}
+	.bg-main {
+		background-color: $mainColor;
+		color: $lightText;
+	}
+	.text-main {
+		color: $mainColor;
+	}
+}

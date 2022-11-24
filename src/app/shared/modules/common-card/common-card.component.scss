@@ -1,0 +1,15 @@
+.chevron {
+	transition: all 0.3s;
+	&.active {
+		transform: rotate(180deg);
+	}
+}
+.card-body {
+	transition: all 0.3s;
+	max-height: 2000px;
+	overflow: hidden;
+	&.collapsed {
+		max-height: 0;
+		padding: 0;
+	}
+}

@@ -1,0 +1,32 @@
+<div class="p-3 gap-3 panel text-light bg-dark">
+	<div class="left overflow-auto">
+		<ng-container *ngFor="let item of list; let i = index">
+			<div (click)="changeSelected(i)" class="fajc p-4 text-light border dragItem">
+				{{ item.name }}
+			</div>
+		</ng-container>
+	</div>
+	<div *ngIf="list[idx]" class="right p-3 w-100 d-flex flex-column">
+		<div class="top d-flex flex-column gap-3 flex-grow-1 overflow-auto">
+			<div class="form-group">
+				<label class="form-label">存檔名稱</label>
+				<input #nameIpt type="text" class="form-control bg-dark text-light" [value]="list[idx].name" />
+			</div>
+			<div class="form-group">
+				<label
+					ngxClipboard
+					[cbContent]="list[idx].val"
+					(click)="clickCopy()"
+					class="form-label pointer">
+					關鍵詞
+					<i class="fa-solid fa-copy"></i>
+				</label>
+				<div>{{ list[idx].val }}</div>
+			</div>
+		</div>
+		<div class="buttom d-flex gap-3">
+			<button *ngIf="idx > 0" (click)="delete()" class="btn btn-sm btn-danger">刪除</button>
+			<button (click)="save()" class="btn btn-sm btn-primary">儲存</button>
+		</div>
+	</div>
+</div>

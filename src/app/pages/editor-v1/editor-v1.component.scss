@@ -1,0 +1,16 @@
+@import "/src/assets/scss/rwd";
+.panel {
+	display: flex;
+	gap: 1rem;
+	> * {
+		margin-top: 2rem;
+		width: 50%;
+		flex-grow: 1;
+	}
+	@include xl {
+		flex-direction: column;
+		> * {
+			width: 100%;
+		}
+	}
+}

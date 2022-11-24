@@ -1,0 +1,12 @@
+.body-panel {
+	overflow: auto;
+	min-height: 80vh;
+	max-height: 80vh;
+}
+.mirror_panel {
+	overflow: auto;
+	display: flex;
+	> * {
+		flex-grow: 1;
+	}
+}

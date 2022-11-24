@@ -1,0 +1,35 @@
+<app-common-card cardTitle="手動編輯">
+	<div body class="body-panel">
+		<ng-container *ngFor="let item of list; let i = index">
+			<div class="fajb m-4 fs-4">
+				<div class="w-100 d-flex align-items-center gap-2">
+					<button
+						(click)="updateName(item, ipt.value)"
+						class="btn btn-success text-nowrap text-light btn-sm">
+						改字
+					</button>
+					<input
+						#ipt
+						type="text"
+						[value]="item.val"
+						class="form-control form-control-sm spec-ctrl flex-grow-1 fs-4" />
+				</div>
+				<div class="d-flex justify-content-end gap-3">
+					<div class="d-flex align-items-center gap-1 count-panel">
+						<button (click)="updateProp(item, -0.1, 'num')" class="btn text-light">-0.1</button>
+						<span class="fw-bolder {{ getColor(item.numWeight) }}">{{ item.numWeight }}</span>
+						<button (click)="updateProp(item, 0.1, 'num')" class="btn text-light">+0.1</button>
+					</div>
+					<div class="d-flex align-items-center gap-1 count-panel">
+						<button (click)="updateProp(item, -1, 'bracket')" class="btn text-light">-1</button>
+						<span class="fw-bolder {{ getColor(item.bracketWeight) }}">{{ item.bracketWeight }}</span>
+						<button (click)="updateProp(item, 1, 'bracket')" class="btn text-light">+1</button>
+					</div>
+				</div>
+				<button (click)="deleteItem(i)" class="btn btn-danger text-nowrap text-light btn-sm">
+					刪除
+				</button>
+			</div>
+		</ng-container>
+	</div>
+</app-common-card>
